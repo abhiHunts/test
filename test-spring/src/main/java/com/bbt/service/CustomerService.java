@@ -2,8 +2,11 @@ package com.bbt.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.bbt.entity.Customer;
 
+//@Service
 public interface CustomerService {
 
 	List<Customer> getCustomers();

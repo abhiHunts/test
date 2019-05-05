@@ -3,6 +3,7 @@ package com.bbt.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,7 +50,7 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/delete")
-	public String deleteCustomer(@RequestParam("csutomerId") int theId, Model theModel) {
+	public String deleteCustomer(@RequestParam("customerId") int theId, Model theModel) {
 		customerService.deleteCustomer(theId);
 		return "redirect:/customer/list";
 	}
