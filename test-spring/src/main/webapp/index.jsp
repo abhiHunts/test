@@ -15,23 +15,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>" >
 
     <!-- FontAwesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/font-awesome.min.css"/>" >
 
     <!-- ElegantFonts CSS -->
-    <link rel="stylesheet" href="css/elegant-fonts.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/elegant-fonts.css"/>" >
 
     <!-- themify-icons CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/themify-icons.css"/>" >
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/swiper.min.css"/>" >
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="<c:url value="/resources/style.css"/>" >
+    <link rel="stylesheet" href="<c:url value="/resources/css/input.css"/>" >
 </head>
 <body>
     <div class="hero-content">
