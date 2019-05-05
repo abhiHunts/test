@@ -2,14 +2,32 @@ package com.bbt.entity;
 
 import java.io.File;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "books")
 public class Books {
 
-	
+	 	@Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    @Column(name = "id")
 		private int id;
+	 	
+	 	@Column(name = "path")
 		private String path;
+	 	
+	 	@Column(name = "course")
 		private String course;
+	 	
+	 	@Column(name = "sem")
 		private String sem;
+	 	
+	 	@Column(name = "university")
 		private String university;
 		public int getId() {
 			return id;
@@ -51,6 +69,9 @@ public class Books {
 		
 		
 		
+		public Books() {
+			super();
+		}
 		public Books(int id, String path, String course, String sem, String university) {
 			super();
 			this.id = id;

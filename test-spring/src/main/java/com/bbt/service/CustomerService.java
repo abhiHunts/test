@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.bbt.entity.Books;
 import com.bbt.entity.Customer;
 
 //@Service
@@ -16,5 +17,7 @@ public interface CustomerService {
 	Customer getCustomer(int theId);
 
 	void deleteCustomer(int theId);
+
+	List<Books> getBooks();
 
 }

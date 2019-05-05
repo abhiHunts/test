@@ -12,22 +12,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>" >
 
     <!-- FontAwesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/font-awesome.min.css"/> ">
 
     <!-- ElegantFonts CSS -->
-    <link rel="stylesheet" href="css/elegant-fonts.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/elegant-fonts.css"/>">
 
     <!-- themify-icons CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/themify-icons.css"/>">
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="<c:url value="/resources/css/swiper.min.css"/>">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<c:url value="/resources/style.css"/>">
 
     <script type="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 </head>
@@ -75,36 +75,17 @@
                             </div><!-- .site-branding -->
                         </div><!-- .col -->
 
-                      								<c:url var="showSyllabus" value="Controller">
-														<c:param name="cat" value="syllabus"/>
-														<c:param name="command" value="LOAD"></c:param>
-													</c:url>
-													<c:url var="showVideos" value="Controller">
-														<c:param name="cat" value="videos"/>
-														<c:param name="command" value="LOAD"></c:param>
-													</c:url>
-													<c:url var="showQpaper" value="Controller">
-														<c:param name="cat" value="qpapers"/>
-														<c:param name="command" value="LOAD"></c:param>
-													</c:url>
-													<c:url var="showBooks" value="Controller">
-														<c:param name="cat" value="books"/>
-														<c:param name="command" value="LOAD"></c:param>
-													</c:url>
-													<c:url var="showNotes" value="Controller">
-														<c:param name="cat" value="notes"/>
-														<c:param name="command" value="LOAD"></c:param>
-													</c:url>
+                      								
 
 
                         <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
                             <nav class="site-navigation flex justify-content-end align-items-center">
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                    <li class="current-menu-item"><a href="index.html">Home</a></li>
+                                    <li class="current-menu-item"><a href="home">Home</a></li>
                                     <li><a href="${showSyllabus}">Syllabus</a></li>
                                     <li><a href="${showVideos}">Videos</a></li>
                                     <li><a href="${showQpaper}">Question Paper</a></li>
-                                    <li><a href="${showBooks}">Books</a></li>
+                                    <li><a href="books">Books</a></li>
                                     <li><a href="${showNotes}">Notes</a></li>
                                 </ul>
 

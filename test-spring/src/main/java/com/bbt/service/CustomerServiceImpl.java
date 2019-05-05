@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bbt.dao.CustomerDAO;
+import com.bbt.entity.Books;
 import com.bbt.entity.Customer;
 
 @Service
@@ -34,6 +35,11 @@ public class CustomerServiceImpl implements CustomerService{
 	@Override
 	public void deleteCustomer(int theId) {
 		customerDAO.deleteCustomer(theId);
+	}
+
+	@Override
+	public List<Books> getBooks() {
+		return customerDAO.getBooks();
 	}
 
 }

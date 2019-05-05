@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.bbt.entity.Books;
 import com.bbt.entity.Customer;
 
 @Repository
@@ -52,6 +53,17 @@ public class CustomerDAOImpl implements CustomerDAO{
 		Session session = sessionFactory.getCurrentSession();
 		Customer book = session.byId(Customer.class).load(theId);
 		session.delete(book);
+	}
+
+	@Override
+	public List<Books> getBooks() {
+		Session session = sessionFactory.getCurrentSession();
+		CriteriaBuilder cb = session.getCriteriaBuilder();
+		CriteriaQuery< Books > cq = cb.createQuery(Books.class);
+		Root < Books > root = cq.from(Books.class);
+		cq.select(root);
+		Query query = session.createQuery(cq);
+		return query.getResultList();
 	}
 
 }
