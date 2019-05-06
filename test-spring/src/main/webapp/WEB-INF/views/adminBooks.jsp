@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -177,9 +178,11 @@
 			<!-- .col -->
 		</div>
 		<!-- .row -->
-
+		
+		
 		<div class="form">
-			<form action="" method="get" enctype="multipart/form-data"">
+			<form:form action="saveBook" cssClass="form-horizontal"
+      method="post" modelAttribute="book" enctype="multipart/form-data">
 
 				University : <select name="University">
 					<option value="Pune">SavitriBai Phule Pune University</option>
@@ -197,7 +200,7 @@
 					<option value="tilak">Tilak Maharashtra University</option>
 					<option value="Nanded">Swami Ramanand Teerth Marathwada
 						University</option>
-
+	<br/>
 				</select> Course : <select name="Course">
 					<option value="BAFY">BAFY</option>
 					<option value="BASY">BASY</option>
@@ -209,9 +212,10 @@
 				</select> Sem : <select name="Sem">
 					<option value="1st">1st</option>
 					<option value="2nd">2nd</option>
-
-				</select> <input type="submit" name="Submit" value="Search">
-			</form>
+				</select>
+				File to upload: <input type="file" name="file">
+				<input type="button" value="Add Book" class="btn btn-primary"/>
+			</form:form>
 		</div>
 		<table class="table table table-striped table-bordered">
 			<tr>
@@ -223,7 +227,7 @@
 				<th>Action</th>
 			</tr>
 			<c:forEach var="tempData" items="${DATA_LIST}">
-			
+
 				<!-- construct an "update" link with  id -->
 				<c:url var="updateLink" value="/book/updateForm">
 					<c:param name="bookId" value="${tempData.id}" />

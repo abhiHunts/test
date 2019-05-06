@@ -20,4 +20,6 @@ public interface CustomerDAO {
 
 	List<Books> getBooks();
 
+	void saveBook(Books theBook);
+
 }

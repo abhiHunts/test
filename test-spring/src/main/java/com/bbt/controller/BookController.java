@@ -31,18 +31,18 @@ public class BookController {
 	
 	@GetMapping("/showForm")
 	public String showFormForAdd(Model theModel) {
-		Customer customer = new Customer();
-		theModel.addAttribute("customer", customer);
-		return "customer-form";
+		Books book = new Books();
+		theModel.addAttribute("theBook", book);
+		return "book-form";
 	}
 	
-	@PostMapping("/saveCustomer")
-	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
-		customerService.saveCustomer(theCustomer);
-		return "redirect:/customer/list/";
+	@PostMapping("/saveBook")
+	public String saveCustomer(@ModelAttribute("book") Books theBook) {
+		customerService.saveBook(theBook);
+		return "redirect:/book/list/";
 	}
 	
-	@GetMapping("/updateForm")
+	@GetMapping("/updateBook")
 	public String showFormUpdate(@RequestParam("customerId") int theId, Model theModel) {
 		Customer theCustomer = customerService.getCustomer(theId);
 		theModel.addAttribute("customer", theCustomer);

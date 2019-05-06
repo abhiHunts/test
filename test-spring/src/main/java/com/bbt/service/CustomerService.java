@@ -20,4 +20,6 @@ public interface CustomerService {
 
 	List<Books> getBooks();
 
+	void saveBook(Books theBook);
+
 }

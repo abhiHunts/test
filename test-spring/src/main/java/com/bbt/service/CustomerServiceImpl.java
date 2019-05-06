@@ -42,4 +42,9 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerDAO.getBooks();
 	}
 
+	@Override
+	public void saveBook(Books theBook) {
+		customerDAO.saveBook(theBook);
+	}
+
 }

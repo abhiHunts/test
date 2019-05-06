@@ -24,7 +24,6 @@ public class CustomerDAOImpl implements CustomerDAO{
 	private SessionFactory sessionFactory;
 	
 	@Override
-	@Transactional
 	public List<Customer> getCustomers() {
 		Session session = sessionFactory.getCurrentSession();
 		CriteriaBuilder cb = session.getCriteriaBuilder();
@@ -64,6 +63,12 @@ public class CustomerDAOImpl implements CustomerDAO{
 		cq.select(root);
 		Query query = session.createQuery(cq);
 		return query.getResultList();
+	}
+
+	@Override
+	public void saveBook(Books theBook) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		currentSession.saveOrUpdate(theBook);
 	}
 
 }
